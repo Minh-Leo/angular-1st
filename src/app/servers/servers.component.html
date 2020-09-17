@@ -1,4 +1,15 @@
 <p>servers works!</p>
 
+<label for="">Server name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<!-- <h3>{{ serverName }}</h3> -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
