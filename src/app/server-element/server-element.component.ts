@@ -4,7 +4,9 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  ContentChild,
   DoCheck,
+  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
@@ -31,6 +33,7 @@ export class ServerElementComponent
     OnDestroy {
   @Input("srvElement") element: { type: string; name: string; content: string };
   @Input() name: string;
+  @ContentChild("contentParagraph") paragraph: ElementRef;
 
   constructor() {
     console.log("Constructor called");
