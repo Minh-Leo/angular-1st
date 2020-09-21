@@ -23,16 +23,26 @@
         [name]="serverElement.name"
       >
         <p #contentParagraph>
-          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
+          <!-- <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
             serverElement.content
           }}</strong>
           <em *ngIf="serverElement.type === 'blueprint'">{{
+            serverElement.content
+          }}</em> -->
+          <strong
+            *appUnless="serverElement.type !== 'server'"
+            style="color: red"
+            >{{ serverElement.content }}</strong
+          >
+          <em *appUnless="serverElement.type !== 'blueprint'">{{
             serverElement.content
           }}</em>
         </p>
       </app-server-element>
       <p appBasicHighlight>This is custom directive</p>
-      <p appBetterHighlight>This is better practice custom directive</p>
+      <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">
+        This is better practice custom directive
+      </p>
     </div>
   </div>
 </div>
