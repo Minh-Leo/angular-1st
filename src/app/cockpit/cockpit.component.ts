@@ -6,13 +6,14 @@ import {
   ViewChild,
   ElementRef,
 } from "@angular/core";
+import { DataService } from "../services/data.service";
 import { LoggingService } from "../services/logging.service";
 
 @Component({
   selector: "app-cockpit",
   templateUrl: "./cockpit.component.html",
   styleUrls: ["./cockpit.component.css"],
-  providers: [LoggingService],
+  providers: [DataService],
 })
 export class CockpitComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<{
@@ -38,6 +39,9 @@ export class CockpitComponent implements OnInit {
       serverName: nameInput.value,
       serverContent: this.serverContentInput.nativeElement.value,
     });
+    this.loggingService.typeUpdated.subscribe((status: string) =>
+      alert("new status is:" + status)
+    );
     // this.serverCreated.emit({
     //   serverName: nameInput.value,
     //   serverContent: this.newServerContent,
@@ -48,6 +52,5 @@ export class CockpitComponent implements OnInit {
       serverName: nameInput.value,
       serverContent: this.serverContentInput.nativeElement.value,
     });
-    this.loggingService.logStatusChange("hi there");
   }
 }

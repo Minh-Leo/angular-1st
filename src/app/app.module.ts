@@ -11,7 +11,7 @@ import { BasicHighlightDirective } from "./basic-highlight/basic-highlight.direc
 import { BetterHighlightDirective } from "./better-highlight/better-highlight.directive";
 import { UnlessDirective } from "./unless.directive";
 
-import { DataService } from "./services/data.service";
+import { LoggingService } from "./services/logging.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { DataService } from "./services/data.service";
     UnlessDirective,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [DataService],
+  providers: [LoggingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
