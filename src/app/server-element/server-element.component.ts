@@ -36,38 +36,38 @@ export class ServerElementComponent
   @ContentChild("contentParagraph") paragraph: ElementRef;
 
   constructor() {
-    console.log("Constructor called");
+    // console.log("Constructor called");
   }
 
-  // ngOnInit(): void {
-  //   console.log("ngOnInit called");
-  // }
+  ngOnInit(): void {
+    // console.log("ngOnInit called");
+  }
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log("ngOnChanges called");
-  //   console.log(changes);
-  // }
+  ngOnChanges(changes: SimpleChanges) {
+    // console.log("ngOnChanges called");
+    // console.log(changes);
+  }
 
-  // ngDoCheck() {
-  //   console.log("%c ngDoCheck called", "color: yellow");
-  // }
+  ngDoCheck() {
+    // console.log("%c ngDoCheck called", "color: yellow");
+  }
 
-  // ngAfterContentInit() {
-  //   console.log("%c ngAfterContentInit called", "color: green");
-  // }
+  ngAfterContentInit() {
+    // console.log("%c ngAfterContentInit called", "color: green");
+  }
 
-  // ngAfterContentChecked() {
-  //   console.log("%c ngAfterContentChecked called", "color: green");
-  // }
-  // ngAfterViewInit() {
-  //   console.log("%c ngAfterViewInit called", "color: orange");
-  // }
+  ngAfterContentChecked() {
+    // console.log("%c ngAfterContentChecked called", "color: green");
+  }
+  ngAfterViewInit() {
+    // console.log("%c ngAfterViewInit called", "color: orange");
+  }
 
-  // ngAfterViewChecked() {
-  //   console.log("%c ngAfterViewChecked called", "color: orange");
-  // }
+  ngAfterViewChecked() {
+    // console.log("%c ngAfterViewChecked called", "color: orange");
+  }
 
-  // ngOnDestroy() {
-  //   console.log("%c ngOnDestroy called", "color: red");
-  // }
+  ngOnDestroy() {
+    // console.log("%c ngOnDestroy called", "color: red");
+  }
 }

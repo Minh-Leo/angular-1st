@@ -6,11 +6,13 @@ import {
   ViewChild,
   ElementRef,
 } from "@angular/core";
+import { LoggingService } from "../services/logging.service";
 
 @Component({
   selector: "app-cockpit",
   templateUrl: "./cockpit.component.html",
   styleUrls: ["./cockpit.component.css"],
+  providers: [LoggingService],
 })
 export class CockpitComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<{
@@ -27,7 +29,7 @@ export class CockpitComponent implements OnInit {
   @ViewChild("serverContentInput", { static: true })
   serverContentInput: ElementRef;
 
-  constructor() {}
+  constructor(private loggingService: LoggingService) {}
 
   ngOnInit(): void {}
 
@@ -46,5 +48,6 @@ export class CockpitComponent implements OnInit {
       serverName: nameInput.value,
       serverContent: this.serverContentInput.nativeElement.value,
     });
+    this.loggingService.logStatusChange("hi there");
   }
 }

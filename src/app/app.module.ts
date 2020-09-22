@@ -9,7 +9,9 @@ import { CockpitComponent } from "./cockpit/cockpit.component";
 import { ServerElementComponent } from "./server-element/server-element.component";
 import { BasicHighlightDirective } from "./basic-highlight/basic-highlight.directive";
 import { BetterHighlightDirective } from "./better-highlight/better-highlight.directive";
-import { UnlessDirective } from './unless.directive';
+import { UnlessDirective } from "./unless.directive";
+
+import { DataService } from "./services/data.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { UnlessDirective } from './unless.directive';
     UnlessDirective,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
